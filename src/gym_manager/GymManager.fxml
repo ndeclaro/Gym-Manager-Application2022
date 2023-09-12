@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gym_manager.GymManagerController">
+    <children>
+        <TabPane prefHeight="404.0" prefWidth="640.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Member">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="181.0" prefWidth="640.0">
+                            <children>
+                                <TabPane layoutX="11.0" prefHeight="344.0" prefWidth="618.0" tabClosingPolicy="UNAVAILABLE">
+                                    <tabs>
+                                        <Tab text="Add Member">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="165.0" prefWidth="618.0">
+                                                    <children>
+                                                        <HBox prefHeight="100.0" prefWidth="619.0">
+                                                            <children>
+                                                                <TextField fx:id="firstNameForAddingMember" promptText="First Name ">
+                                                                    <HBox.margin>
+                                                                        <Insets right="25.0" />
+                                                                    </HBox.margin>
+                                                                </TextField>
+                                                                <TextField fx:id="lastNameForAddingMember" promptText="Last Name ">
+                                                                    <HBox.margin>
+                                                                        <Insets left="25.0" />
+                                                                    </HBox.margin>
+                                                                </TextField>
+                                                                <DatePicker fx:id="dobForAddingMember">
+                                                                    <HBox.margin>
+                                                                        <Insets left="25.0" />
+                                                                    </HBox.margin>
+                                                                </DatePicker>
+                                                            </children>
+                                                        </HBox>
+                                                        <HBox layoutY="93.0" prefHeight="100.0" prefWidth="618.0">
+                                                            <children>
+                                                                <Group>
+                                                                    <children>
+                                                                        <AnchorPane prefHeight="68.0" prefWidth="473.0">
+                                                                            <children>
+                                                                                <Text layoutX="148.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose A Membership:" />
+                                                                                <RadioButton fx:id="standardMembership" layoutY="39.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="112.0" selected="true" text="Standard">
+                                                                                    <toggleGroup>
+                                                                                        <ToggleGroup fx:id="membershipType" />
+                                                                                    </toggleGroup></RadioButton>
+                                                                                <RadioButton fx:id="familyMembership" layoutX="290.0" layoutY="39.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="127.0" text="Family " toggleGroup="$membershipType" />
+                                                                                <RadioButton fx:id="premiumMembership" layoutX="148.0" layoutY="39.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="127.0" text="Premium" toggleGroup="$membershipType" />
+                                                                            </children>
+                                                                        </AnchorPane>
+                                                                    </children>
+                                                                </Group>
+                                                                <TextField fx:id="locationForAddingMember" promptText="Location" />
+                                                            </children>
+                                                        </HBox>
+                                                        <HBox layoutY="186.0" prefHeight="100.0" prefWidth="360.0">
+                                                            <children>
+                                                                <Button fx:id="addMember" mnemonicParsing="false" onAction="#addMember" prefHeight="31.0" prefWidth="199.0" text="Add Member" />
+                                                                <TextArea fx:id="addMemberTextArea" prefHeight="200.0" prefWidth="202.0" />
+                                                            </children>
+                                                        </HBox>
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                        <Tab text="Load">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                    <children>
+                                                        <HBox alignment="CENTER" prefHeight="124.0" prefWidth="502.0">
+                                                            <children>
+                                                                <Button fx:id="loadMember" mnemonicParsing="false" onAction="#importMember" prefHeight="30.0" prefWidth="232.0" text="Confirm Load Member">
+                                                                    <padding>
+                                                                        <Insets right="25.0" />
+                                                                    </padding>
+                                                                </Button>
+                                                                <TextArea fx:id="loadMemberTextArea" prefHeight="400.0" prefWidth="400.0" />
+                                                            </children>
+                                                        </HBox>
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                        <Tab text="Remove">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                    <children>
+                                                        <HBox layoutY="14.0" prefHeight="100.0" prefWidth="617.0">
+                                                            <children>
+                                                                <TextField fx:id="firstNameForRemove" promptText="First Name ">
+                                                                    <HBox.margin>
+                                                                        <Insets right="25.0" />
+                                                                    </HBox.margin>
+                                                                </TextField>
+                                                                <TextField fx:id="lastNameForRemove" promptText="Last Name">
+                                                                    <HBox.margin>
+                                                                        <Insets left="25.0" />
+                                                                    </HBox.margin>
+                                                                </TextField>
+                                                                <DatePicker fx:id="dobForRemove" promptText="Date of Birth">
+                                                                    <HBox.margin>
+                                                                        <Insets left="25.0" />
+                                                                    </HBox.margin>
+                                                                </DatePicker>
+                                                            </children>
+                                                        </HBox>
+                                                        <HBox layoutX="94.0" layoutY="172.0" prefHeight="100.0" prefWidth="430.0">
+                                                            <children>
+                                                                <Button fx:id="removeMember" mnemonicParsing="false" onAction="#removeMember" prefHeight="62.0" prefWidth="155.0" text="Confirm Remove" />
+                                                                <TextArea fx:id="removalText" prefHeight="200.0" prefWidth="200.0">
+                                                                    <HBox.margin>
+                                                                        <Insets left="25.0" />
+                                                                    </HBox.margin>
+                                                                </TextArea>
+                                                            </children>
+                                                        </HBox>
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                    </tabs>
+                                </TabPane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Fitness Class">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TabPane prefHeight="341.0" prefWidth="640.0" tabClosingPolicy="UNAVAILABLE">
+                                    <tabs>
+                                        <Tab text="Load Class">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                    <children>
+                                                        <HBox prefHeight="100.0" prefWidth="625.0">
+                                                            <children>
+                                                                <Button fx:id="loadFitnessClass" mnemonicParsing="false" onAction="#importClasses" prefHeight="65.0" prefWidth="202.0" text="Confirm load classes" />
+                                                                <TextArea fx:id="loadFitnessClassText" prefHeight="200.0" prefWidth="200.0">
+                                                                    <HBox.margin>
+                                                                        <Insets left="25.0" />
+                                                                    </HBox.margin>
+                                                                </TextArea>
+                                                            </children>
+                                                        </HBox>
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                        <Tab fx:id="addMemberToFitnessClass" text="Check-in">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                    <children>
+                                                        <HBox prefHeight="100.0" prefWidth="640.0">
+                                                            <children>
+                                                                <TextField fx:id="classNameForAddingFitnessMember" promptText="Class Name " />
+                                                                <TextField fx:id="instructorNameForAddingFitnessMember" promptText="Instructor Name ">
+                                                                    <HBox.margin>
+                                                                        <Insets left="25.0" />
+                                                                    </HBox.margin>
+                                                                </TextField>
+                                                                <TextField fx:id="LocationForAddingFitnessMember" promptText="Location">
+                                                                    <HBox.margin>
+                                                                        <Insets left="25.0" />
+                                                                    </HBox.margin>
+                                                                </TextField>
+                                                            </children>
+                                                        </HBox>
+                                                        <HBox alignment="CENTER" layoutY="92.0" prefHeight="100.0" prefWidth="640.0">
+                                                            <children>
+                                                                <TextField fx:id="firstNameForAddingFitnessMember" promptText="First Name " />
+                                                                <TextField fx:id="lastNameForAddingFitnessMember" promptText="Last Name">
+                                                                    <HBox.margin>
+                                                                        <Insets left="25.0" />
+                                                                    </HBox.margin>
+                                                                </TextField>
+                                                                <DatePicker fx:id="dobForAddingFitnessMember" promptText="Date of Birth">
+                                                                    <HBox.margin>
+                                                                        <Insets left="25.0" />
+                                                                    </HBox.margin>
+                                                                </DatePicker>
+                                                            </children>
+                                                        </HBox>
+                                                        <Button fx:id="addFitnessMember" contentDisplay="CENTER" layoutX="260.0" layoutY="204.0" mnemonicParsing="false" text="Confirm Check In " onAction="#checkIn"/>
+                                                        <TextArea fx:id="addFitnessMemberText" layoutX="220.0" layoutY="235.0" prefHeight="46.0" prefWidth="200.0" />
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                        <Tab fx:id="addGuestToFitnessClass" text="Guest Check-in">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                    <children>
+                                                        <HBox prefHeight="100.0" prefWidth="640.0">
+                                                            <children>
+                                                                <TextField fx:id="classNameForAddingFitnessGuest" promptText="Class Name " />
+                                                                <TextField fx:id="instructorNameForAddingFitnessGuest" promptText="Instructor Name ">
+                                                                    <HBox.margin>
+                                                                        <Insets left="25.0" />
+                                                                    </HBox.margin>
+                                                                </TextField>
+                                                                <TextField fx:id="LocationForAddingFitnessGuest" promptText="Location">
+                                                                    <HBox.margin>
+                                                                        <Insets left="25.0" />
+                                                                    </HBox.margin>
+                                                                </TextField>
+                                                            </children>
+                                                        </HBox>
+                                                        <HBox alignment="CENTER" layoutY="92.0" prefHeight="100.0" prefWidth="640.0">
+                                                            <children>
+                                                                <TextField fx:id="firstNameForAddingFitnessGuest" promptText="First Name " />
+                                                                <TextField fx:id="lastNameForAddingFitnessGuest" promptText="Last Name">
+                                                                    <HBox.margin>
+                                                                        <Insets left="25.0" />
+                                                                    </HBox.margin>
+                                                                </TextField>
+                                                                <DatePicker fx:id="dobForAddingFitnessGuest" promptText="Date of Birth">
+                                                                    <HBox.margin>
+                                                                        <Insets left="25.0" />
+                                                                    </HBox.margin>
+                                                                </DatePicker>
+                                                            </children>
+                                                        </HBox>
+                                                        <Button fx:id="addFitnessGuest" contentDisplay="CENTER" layoutX="260.0" layoutY="204.0" mnemonicParsing="false" text="Confirm Check In " onAction="#checkInGuest"/>
+                                                        <TextArea fx:id="addFitnessGuestText" layoutX="220.0" layoutY="235.0" prefHeight="46.0" prefWidth="200.0" />
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                        <Tab text="Drop Class">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                    <children>
+                                                        <HBox prefHeight="100.0" prefWidth="640.0">
+                                                            <children>
+                                                                <TextField fx:id="classNameForDroppingFitnessMember" promptText="Class Name " />
+                                                                <TextField fx:id="instructorNameForDroppingFitnessMember" promptText="Instructor Name ">
+                                                                    <HBox.margin>
+                                                                        <Insets left="25.0" />
+                                                                    </HBox.margin>
+                                                                </TextField>
+                                                                <TextField fx:id="locationForDroppingFitnessMember" promptText="Location">
+                                                                    <HBox.margin>
+                                                                        <Insets left="25.0" />
+                                                                    </HBox.margin>
+                                                                </TextField>
+                                                            </children>
+                                                        </HBox>
+                                                        <HBox alignment="CENTER" layoutY="74.0" prefHeight="100.0" prefWidth="640.0">
+                                                            <children>
+                                                                <TextField fx:id="firstNameForDroppingFitnessMember" promptText="First Name " />
+                                                                <TextField fx:id="lastNameForDroppingFitnessMember" promptText="Last Name">
+                                                                    <HBox.margin>
+                                                                        <Insets left="25.0" />
+                                                                    </HBox.margin>
+                                                                </TextField>
+                                                                <DatePicker fx:id="dobForDroppingFitnessMember" promptText="Date of Birth">
+                                                                    <HBox.margin>
+                                                                        <Insets left="25.0" />
+                                                                    </HBox.margin>
+                                                                </DatePicker>
+                                                            </children>
+                                                        </HBox>
+                                                        <Button fx:id="dropFitnessMember" contentDisplay="CENTER" layoutX="260.0" layoutY="180.0" mnemonicParsing="false" text="Confirm Drop " onAction="#dropClass" />
+                                                        <TextArea fx:id="dropFitnessMemberText" layoutX="220.0" layoutY="225.0" prefHeight="32.0" prefWidth="200.0" />
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                        <Tab text="Guest Drop Class">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                    <children>
+                                                        <HBox prefHeight="100.0" prefWidth="640.0">
+                                                            <children>
+                                                                <TextField fx:id="classNameForDroppingFitnessGuest" promptText="Class Name " />
+                                                                <TextField fx:id="instructorNameForDroppingFitnessGuest" promptText="Instructor Name ">
+                                                                    <HBox.margin>
+                                                                        <Insets left="25.0" />
+                                                                    </HBox.margin>
+                                                                </TextField>
+                                                                <TextField fx:id="locationForDroppingFitnessGuest" promptText="Location">
+                                                                    <HBox.margin>
+                                                                        <Insets left="25.0" />
+                                                                    </HBox.margin>
+                                                                </TextField>
+                                                            </children>
+                                                        </HBox>
+                                                        <HBox alignment="CENTER" layoutY="67.0" prefHeight="100.0" prefWidth="640.0">
+                                                            <children>
+                                                                <TextField fx:id="firstNameForDroppingFitnessGuest" promptText="First Name " />
+                                                                <TextField fx:id="lastNameForDroppingFitnessGuest" promptText="Last Name">
+                                                                    <HBox.margin>
+                                                                        <Insets left="25.0" />
+                                                                    </HBox.margin>
+                                                                </TextField>
+                                                                <DatePicker fx:id="dobForDroppingFitnessGuest" promptText="Date of Birth">
+                                                                    <HBox.margin>
+                                                                        <Insets left="25.0" />
+                                                                    </HBox.margin>
+                                                                </DatePicker>
+                                                            </children>
+                                                        </HBox>
+                                                        <Button fx:id="dropFitnessGuest" contentDisplay="CENTER" layoutX="260.0" layoutY="180.0" mnemonicParsing="false" text="Confirm Drop Class " onAction="#dropGuest"/>
+                                                        <TextArea fx:id="dropFitnessGuestText" layoutX="220.0" layoutY="225.0" prefHeight="32.0" prefWidth="200.0" />
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                    </tabs>
+                                </TabPane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Information ">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <HBox layoutX="53.0" prefHeight="100.0" prefWidth="588.0">
+                                    <children>
+                                        <Group>
+                                            <children>
+                                                <HBox prefHeight="100.0" prefWidth="577.0">
+                                                    <children>
+                                                        <RadioButton fx:id="printByCounty" mnemonicParsing="false" onAction="#printByCounty" prefHeight="30.0" prefWidth="108.0" text="By County">
+                                                            <toggleGroup>
+                                                                <ToggleGroup fx:id="printType" />
+                                                            </toggleGroup></RadioButton>
+                                                        <RadioButton fx:id="printByName" mnemonicParsing="false" onAction="#printByName" prefHeight="30.0" prefWidth="115.0" text="By Name " toggleGroup="$printType" />
+                                                        <RadioButton fx:id="printByExpiration" mnemonicParsing="false" onAction="#printByExpiration" prefHeight="30.0" prefWidth="135.0" text="By Expiration " toggleGroup="$printType" />
+                                                        <RadioButton fx:id="printByFee" mnemonicParsing="false" onAction="#printByFee" prefHeight="30.0" prefWidth="86.0" text="By Fee" toggleGroup="$printType" />
+                                                        <RadioButton fx:id="printByClasses" mnemonicParsing="false" onAction="#printByClass" prefHeight="30.0" prefWidth="90.0" text="Classes" toggleGroup="$printType" />
+                                                    </children>
+                                                </HBox>
+                                            </children>
+                                        </Group>
+                                    </children>
+                                </HBox>
+                                <Text layoutX="3.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Show:" wrappingWidth="42.98307228088379" />
+                                <ScrollPane layoutX="3.0" layoutY="40.0" prefHeight="302.0" prefWidth="629.0">
+                                    <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="299.0" prefWidth="627.0">
+                                            <children>
+                                                <TextArea fx:id="informationPrint" prefHeight="295.0" prefWidth="628.0" />
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </ScrollPane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</VBox>
